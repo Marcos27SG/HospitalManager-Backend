@@ -20,7 +20,9 @@ last_name VARCHAR(150) NOT NULL,
 direction VARCHAR(150) NOT NULL,
 birthdate DATE NOT NULL,
 created_at TIMESTAMP,
-created_by TIMESTAMP
+created_by TIMESTAMP,
+hospital_id INTEGER NOT NULL,
+FOREIGN KEY (hospital_id) REFERENCES hospital_db(id)
 );
 
 create table doctor (
@@ -30,7 +32,9 @@ last_name VARCHAR(150) NOT NULL,
 direction VARCHAR(150) NOT NULL,
 birthdate DATE NOT NULL,
 created_at TIMESTAMP,
-created_by TIMESTAMP
+created_by TIMESTAMP,
+hospital_id INTEGER NOT NULL,
+FOREIGN KEY (hospital_id) REFERENCES hospital_db(id)
 );
 
 create table specialty (
@@ -44,6 +48,7 @@ created_by TIMESTAMP
 create table visit (
 id INTEGER PRIMARY KEY,
 description VARCHAR(200) NOT NULL,
+date DATE NOT NULL,
 patient_id INTEGER NOT NULL,
 doctor_id INTEGER NOT NULL,
 FOREIGN KEY (patient_id) REFERENCES patient(id),
