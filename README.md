@@ -1,6 +1,3 @@
-## Spring Boot Project - Getting Started
-
-This guide details how to set up and run a Spring Boot project that connects to a PostgreSQL database.
 
 ### Prerequisites:
 
